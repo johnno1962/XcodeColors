@@ -271,6 +271,8 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 		{
 			NSRange seqRange = [seqRangeValue rangeValue];
 			[textStorage addAttributes:clearAttrs range:seqRange];
+			seqRange.length = 2;
+			[textStorage replaceCharactersInRange:seqRange withString:@"\\["];
 		}
 	}
 }
